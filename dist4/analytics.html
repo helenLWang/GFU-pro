@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据分析 - GFU Nail</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-paint-brush"></i>
+                <span>GFU</span> Nail
+            </a>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="analytics.html">数据分析</a>
+                <a href="booking.html">预约服务</a>
+                <a href="about.html">关于我们</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面标题 -->
+    <section class="hero" style="padding: 2rem 0;">
+        <div class="hero-content">
+            <h1>数据分析</h1>
+            <p>了解我们的业务表现和客户反馈，持续优化服务质量。</p>
+        </div>
+    </section>
+
+    <!-- 主要内容区域 -->
+    <section class="container">
+        <!-- 关键指标卡片 -->
+        <div class="stats-grid" style="margin-bottom: 3rem;">
+            <div class="stat-card card">
+                <div class="stat-number">2,900+</div>
+                <div class="stat-label">小红书粉丝</div>
+                <div style="color: #52c41a; font-size: 0.9rem; margin-top: 0.5rem;">
+                    <i class="fas fa-arrow-up"></i> 12% 本月增长
+                </div>
+            </div>
+            
+            <div class="stat-card card">
+                <div class="stat-number">64,000+</div>
+                <div class="stat-label">累计点赞</div>
+                <div style="color: #52c41a; font-size: 0.9rem; margin-top: 0.5rem;">
+                    <i class="fas fa-arrow-up"></i> 18% 本月增长
+                </div>
+            </div>
+            
+            <div class="stat-card card">
+                <div class="stat-number">88%</div>
+                <div class="stat-label">客户满意度</div>
+                <div style="color: #faad14; font-size: 0.9rem; margin-top: 0.5rem;">
+                    <i class="fas fa-minus"></i> 持平上月
+                </div>
+            </div>
+            
+            <div class="stat-card card">
+                <div class="stat-number">4.8/5.0</div>
+                <div class="stat-label">平均评分</div>
+                <div style="color: #52c41a; font-size: 0.9rem; margin-top: 0.5rem;">
+                    <i class="fas fa-arrow-up"></i> 0.2 本月提升
+                </div>
+            </div>
+        </div>
+
+        <!-- 粉丝增长图表 -->
+        <div class="card" style="margin-bottom: 2rem;">
+            <h2 style="margin-bottom: 1.5rem;">粉丝增长趋势</h2>
+            <div class="chart-container" style="height: 300px;">
+                <canvas id="followersChart"></canvas>
+            </div>
+        </div>
+
+        <!-- 点赞统计图表 -->
+        <div class="card" style="margin-bottom: 2rem;">
+            <h2 style="margin-bottom: 1.5rem;">点赞统计</h2>
+            <div class="chart-container" style="height: 300px;">
+                <canvas id="likesChart"></canvas>
+            </div>
+        </div>
+
+        <!-- 客户满意度图表 -->
+        <div class="card" style="margin-bottom: 2rem;">
+            <h2 style="margin-bottom: 1.5rem;">客户满意度分布</h2>
+            <div class="chart-container" style="height: 300px;">
+                <canvas id="satisfactionChart"></canvas>
+            </div>
+        </div>
+
+        <!-- 服务类型统计 -->
+        <div class="card">
+            <h2 style="margin-bottom: 1.5rem;">热门服务类型</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>排名</th>
+                            <th>服务类型</th>
+                            <th>预订次数</th>
+                            <th>占比</th>
+                            <th>客户满意度</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>创意设计</td>
+                            <td>1,245</td>
+                            <td>32%</td>
+                            <td>92%</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>法式美甲</td>
+                            <td>980</td>
+                            <td>25%</td>
+                            <td>89%</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>延长美甲</td>
+                            <td>765</td>
+                            <td>20%</td>
+                            <td>87%</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>基础美甲</td>
+                            <td>580</td>
+                            <td>15%</td>
+                            <td>85%</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>卸甲服务</td>
+                            <td>300</td>
+                            <td>8%</td>
+                            <td>83%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <i class="fas fa-paint-brush"></i>
+                        <span>GFU</span> Nail
+                    </div>
+                    <p>专业美甲服务，让您的指尖绽放光彩。我们致力于为每位客户提供高品质的美甲体验。</p>
+                    <div class="social-links">
+                        <a href="https://www.xiaohongshu.com/user/profile/6178fcfc000000001f03e6ef" target="_blank"><i class="fas fa-globe"></i></a>
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="analytics.html">数据分析</a></li>
+                        <li><a href="booking.html">预约服务</a></li>
+                        <li><a href="about.html">关于我们</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>联系我们</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 上海市浦东新区张江高科技园区</li>
+                        <li><i class="fas fa-phone"></i> +86 131 2345 6789</li>
+                        <li><i class="fas fa-envelope"></i> contact@gfunail.com</li>
+                        <li><i class="fas fa-clock"></i> 周一至周日 10:00 - 20:00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 GFU Nail. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

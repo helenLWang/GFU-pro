@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>预约服务 - GFU Nail</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-paint-brush"></i>
+                <span>GFU</span> Nail
+            </a>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="analytics.html">数据分析</a>
+                <a href="booking.html">预约服务</a>
+                <a href="about.html">关于我们</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面标题 -->
+    <section class="hero" style="padding: 2rem 0;">
+        <div class="hero-content">
+            <h1>预约服务</h1>
+            <p>轻松预约，享受专业美甲体验。选择您喜欢的服务和时间，我们期待为您服务。</p>
+        </div>
+    </section>
+
+    <!-- 主要内容区域 -->
+    <section class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+            <!-- 预约表单 -->
+            <div class="card">
+                <h2 style="margin-bottom: 2rem;">填写预约信息</h2>
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label for="name">姓名</label>
+                        <input type="text" id="name" name="name" placeholder="请输入您的姓名" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">手机号码</label>
+                        <input type="tel" id="phone" name="phone" placeholder="请输入您的手机号码" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">服务类型</label>
+                        <select id="service" name="service" required>
+                            <option value="">请选择服务类型</option>
+                            <!-- 选项将通过JavaScript动态加载 -->
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="date">预约日期</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="time">预约时间</label>
+                        <select id="time" name="time" required>
+                            <option value="">请选择预约时间</option>
+                            <option value="10:00">10:00</option>
+                            <option value="11:00">11:00</option>
+                            <option value="12:00">12:00</option>
+                            <option value="13:00">13:00</option>
+                            <option value="14:00">14:00</option>
+                            <option value="15:00">15:00</option>
+                            <option value="16:00">16:00</option>
+                            <option value="17:00">17:00</option>
+                            <option value="18:00">18:00</option>
+                            <option value="19:00">19:00</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="notes">特殊要求（可选）</label>
+                        <textarea id="notes" name="notes" placeholder="请输入您的特殊要求或偏好"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn" style="width: 100%;">提交预约</button>
+                </form>
+            </div>
+            
+            <!-- 日历和信息 -->
+            <div>
+                <!-- 日历选择器 -->
+                <div class="card" style="margin-bottom: 2rem;">
+                    <h2 style="margin-bottom: 1.5rem;" class="calendar-header">选择日期</h2>
+                    <div class="calendar"></div>
+                </div>
+                
+                <!-- 服务信息 -->
+                <div class="card">
+                    <h2 style="margin-bottom: 1.5rem;">服务信息</h2>
+                    <div style="line-height: 1.8;">
+                        <p><strong><i class="fas fa-clock"></i> 营业时间</strong></p>
+                        <p>周一至周日: 10:00 - 20:00</p>
+                        <br>
+                        <p><strong><i class="fas fa-map-marker-alt"></i> 地址</strong></p>
+                        <p>上海市浦东新区张江高科技园区博云路2号</p>
+                        <br>
+                        <p><strong><i class="fas fa-phone"></i> 联系电话</strong></p>
+                        <p>+86 131 2345 6789</p>
+                        <br>
+                        <p><strong><i class="fas fa-info-circle"></i> 预约提示</strong></p>
+                        <ul style="list-style-type: disc; padding-left: 1.5rem;">
+                            <li>请至少提前1天预约</li>
+                            <li>如需取消，请提前4小时告知</li>
+                            <li>请准时到达，超时可能影响您的服务</li>
+                            <li>首次到店客户可享受9折优惠</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 热门服务推荐 -->
+    <section class="features" style="margin-top: 3rem;">
+        <div class="container">
+            <div class="section-title">
+                <h2>热门服务推荐</h2>
+                <p>我们精心挑选的热门美甲服务，让您的指尖绽放独特魅力。</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card card">
+                    <i class="fas fa-paint-brush" style="font-size: 2.5rem;"></i>
+                    <h3>创意设计</h3>
+                    <p>根据季节、潮流或您的个人喜好，为您定制独特的美甲设计。</p>
+                    <p style="font-weight: bold; color: var(--primary); margin-top: 0.5rem;">¥398 / 150分钟</p>
+                </div>
+                
+                <div class="feature-card card">
+                    <i class="fas fa-gem" style="font-size: 2.5rem;"></i>
+                    <h3>法式美甲</h3>
+                    <p>经典优雅的法式美甲，永不过时的选择。</p>
+                    <p style="font-weight: bold; color: var(--primary); margin-top: 0.5rem;">¥258 / 90分钟</p>
+                </div>
+                
+                <div class="feature-card card">
+                    <i class="fas fa-hand-paper" style="font-size: 2.5rem;"></i>
+                    <h3>延长美甲</h3>
+                    <p>使用高品质延长胶，打造修长美丽的指尖。</p>
+                    <p style="font-weight: bold; color: var(--primary); margin-top: 0.5rem;">¥328 / 120分钟</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <i class="fas fa-paint-brush"></i>
+                        <span>GFU</span> Nail
+                    </div>
+                    <p>专业美甲服务，让您的指尖绽放光彩。我们致力于为每位客户提供高品质的美甲体验。</p>
+                    <div class="social-links">
+                        <a href="https://www.xiaohongshu.com/user/profile/6178fcfc000000001f03e6ef" target="_blank"><i class="fas fa-globe"></i></a>
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="analytics.html">数据分析</a></li>
+                        <li><a href="booking.html">预约服务</a></li>
+                        <li><a href="about.html">关于我们</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>联系我们</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 上海市浦东新区张江高科技园区</li>
+                        <li><i class="fas fa-phone"></i> +86 131 2345 6789</li>
+                        <li><i class="fas fa-envelope"></i> contact@gfunail.com</li>
+                        <li><i class="fas fa-clock"></i> 周一至周日 10:00 - 20:00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 GFU Nail. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
